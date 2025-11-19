@@ -12,19 +12,19 @@ const SERVICE_CARDS = [
     id: "domestic-helper-placement",
     mainIcon: HelperIcon,
     title: "Domestic Helper Placement",
-    body: "Careful matching for childcare, eldercare, and household management",
+    body: "Thoughtful matching for childcare, eldercare, and daily household needs, ensuring each family receives a helper who fits their routines and expectations.",
   },
   {
     id: "training",
     mainIcon: TrainingIcon,
     title: "Training & Certification",
-    body: "All helpers attend professional courses in Jakarta, covering cleaning, cooking, safety, and communication",
+    body: "Every helper completes structured training in Jakarta, covering essential skills such as cleaning, cooking, safety practices, and communication to prepare them for your home.",
   },
   {
     id: "support",
     mainIcon: SupportIcon,
     title: "Ongoing Support",
-    body: "Regular check-ins and guidance so your home runs smoothly",
+    body: "With steady check-ins and continuous guidance, we support both your helper and your family so that day-to-day home life remains smooth, stable, and well-managed throughout.",
   },
 ];
 

@@ -196,7 +196,7 @@
   }
 
   .story-header {
-    font-size: 26px;
+    font-size: 30px;
     margin-bottom: 2px; /* tiny margin to avoid extra gap */
   }
 
@@ -209,7 +209,7 @@
   }
 
   .story-person-img {
-    max-width: 75%;
+    max-width: 90%;
     padding: 20px;
     height: auto;
     margin: 0 auto;
@@ -217,21 +217,10 @@
 
   /* Text block: good padding for readability */
   .story-col-right {
-    padding: 10px 40px 40px;
+    padding: 10px 20px 40px;
   }
 
   .story-body {
     font-size: 14px;
-  }
-}
-
-/* ===== Very small screens ===== */
-@media (max-width: 480px) {
-  .story-person-img {
-    max-width: 210px;
-  }
-
-  .story-header {
-    font-size: 22px;
   }
 }

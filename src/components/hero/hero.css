@@ -173,15 +173,19 @@
 @media (max-width: 530px) {
   .hero-left-header {
     padding-top: 50px;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 1.2;
     text-align: center;
   }
 
   .hero-left-secondary {
-    font-size: 20px;
+    font-size: 18px;
     padding: 0 2px;
     max-width: 100%;
     text-align: center;
+  }
+
+  .hero-contact-us-btn {
+    font-size: 20px;
   }
 }

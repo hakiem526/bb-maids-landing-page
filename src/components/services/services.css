@@ -145,8 +145,13 @@
 }
 
 @media (max-width: 640px) {
+  .services-main {
+    padding: 32px 0;
+  }
+
   .service-card {
     padding: 16px 14px;
+    min-height: 100px;
   }
 
   .service-card-main-icon {
