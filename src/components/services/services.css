@@ -145,6 +145,10 @@
 }
 
 @media (max-width: 640px) {
+  .services-header {
+    font-size: 36px;
+  }
+
   .services-main {
     padding: 32px 0;
   }
