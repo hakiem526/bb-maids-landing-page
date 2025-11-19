@@ -89,6 +89,11 @@
   margin: 0 0 10px 0;
 }
 
+.story-body strong {
+  font-weight: 700;
+  color: var(--almost-black);
+}
+
 .story-pill-row {
   display: flex;
   flex-wrap: wrap;

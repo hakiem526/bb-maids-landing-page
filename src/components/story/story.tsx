@@ -51,20 +51,21 @@ export function Story() {
           </p>
 
           <p className="story-body">
-            That's why we've redefined the agency experience.
+            That's why we've <strong>redefined the agency experience</strong>.
           </p>
 
           <p className="story-body">
-            Founded by Mariam Bibi, a professional known for her dedication to
-            service and after-care, we prioritize training, preparation, and
-            ongoing support. We work closely with training partners, personally
-            brief every helper before arrival, and stay involved long after
-            placement.
+            Founded by <strong>Mariam Bibi</strong>, a professional known for
+            her dedication to <strong>service</strong> and{" "}
+            <strong>after-care</strong>, we prioritize <strong>training</strong>
+            , <strong>preparation</strong>, and <strong>ongoing support</strong>. We work closely with training
+            partners, personally brief every helper before arrival, and stay
+            involved long after placement.
           </p>
 
           <p className="story-body">
-            Our promise is simple: A high-quality helper for your home, and true
-            peace of mind for your family.
+            Our promise is simple: A <strong>high-quality helper</strong> for
+            your home, and true <strong>peace of mind</strong> for your family.
           </p>
 
           <div className="story-pill-row">
