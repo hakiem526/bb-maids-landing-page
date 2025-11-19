@@ -1,10 +1,8 @@
 /* ===== Layout root ===== */
 #main-page-container {
   position: relative;
-  min-height: 100vh;
-  height: auto;
-  overflow-x: hidden;
-  overflow-y: auto;
+  height: 100vh;
+  overflow: hidden;
   background: var(--bg-sky-blue);
   color: var(--almost-black);
   display: flex;
@@ -89,4 +87,25 @@
 .whatsapp-icon {
   width: 100%;
   display: block;
+}
+
+/* ===== FIX FOOTER CUT-OFF WITH SIMPLEBAR ===== */
+
+/* Ensure SimpleBar content area can grow fully */
+.simplebar-content-wrapper {
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+/* Ensure the internal height auto observer does NOT clamp height */
+.simplebar-height-auto-observer-wrapper,
+.simplebar-height-auto-observer {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* Most important: allow scroll area to expand for long content */
+.simplebar-content {
+  height: auto !important;
+  padding-bottom: 40px; /* ensures footer never touches the viewport edge */
 }
