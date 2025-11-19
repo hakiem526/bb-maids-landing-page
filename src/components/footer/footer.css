@@ -1,0 +1,116 @@
+.footer-container {
+  width: 100vw;
+  min-height: 400px;
+  background-image: url("../../assets/images/footer/footer-bg.svg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* push content to bottom */
+  box-sizing: border-box;
+  color: var(--white);
+}
+
+/* Inner wrapper pinned to bottom with padding */
+.footer-inner {
+  width: 100%;
+  max-width: 1200px;
+  padding: 32px 24px 40px; /* bottom padding for breathing room */
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+/* LEFT: logo + socials */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.footer-main-logo {
+  max-width: 220px;
+  height: auto;
+  display: block;
+}
+
+.footer-social-row {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* requested gap */
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* RIGHT: phone + copyright */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-row-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.footer-row-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Hover states for links */
+.footer-row-text:hover,
+.footer-social-link:hover .footer-social-icon {
+  opacity: 0.85;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .footer-inner {
+    padding: 28px 20px 36px;
+    gap: 20px;
+  }
+
+  .footer-main-logo {
+    max-width: 190px;
+  }
+}
+
+/* Mobile: stack columns */
+@media (max-width: 700px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-right {
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,107 @@
+.process-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  isolation: isolate; /* make overlay + text crisp */
+}
+
+/* Image layer */
+.process-card-image-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.process-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.4s ease-out;
+  will-change: transform;
+  image-rendering: auto;
+}
+
+/* Mild hover zoom for crisp modern feel */
+.process-card:hover .process-card-image {
+  transform: scale(1.05);
+}
+
+/* Dark overlay */
+.process-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Step label (top-left) */
+.process-card-step-label {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  z-index: 2;
+
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* Text block at bottom */
+.process-card-text {
+  position: relative;
+  z-index: 2;
+  padding: 18px 20px 22px 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+}
+
+/* Title */
+.process-card-title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+}
+
+/* Body text */
+.process-card-body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Small-screen tweak */
+@media (max-width: 640px) {
+  .process-card {
+    border-radius: 20px;
+  }
+
+  .process-card-step-label {
+    font-size: 20px;
+  }
+
+  .process-card-title {
+    font-size: 16px;
+  }
+
+  .process-card-body {
+    font-size: 13px;
+  }
+}

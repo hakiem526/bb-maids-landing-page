@@ -1,0 +1,40 @@
+/* Poppins (for body / secondary text) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
+/* Michegar (for headers) */
+@font-face {
+  font-family: "Michegar";
+  src: url("./assets/fonts/Michegar.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========== THEME VARIABLES ========== */
+:root {
+  /* Colors */
+  --bg-sky-blue: #c2e6f4;
+  --sky-blue: #4ca8d4;
+  --tropical-blue: #c4e5f9;
+  --white: #ffffff;
+  --almost-black: #282828;
+  --baby-pink: #fca3af;
+
+  /* Fonts */
+  --font-header: "Michegar", serif;
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Global defaults */
+body {
+  font-family: var(--font-body);
+  background: var(--bg-sky-blue);
+  color: var(--almost-black);
+  margin: 0;
+  height: 100%;
+}
+
+.font-accent {
+  font-family: var(--font-header);
+}

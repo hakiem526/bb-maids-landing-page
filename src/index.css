@@ -1,0 +1,28 @@
+/* Tiny reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Global typography */
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.5;
+  background: var(--bg-sky-blue, #ffffff);
+  color: var(--almost-black, #111111);
+}
+
+/* Accent font utility (use on headings you want in Michegar) */
+.font-accent {
+  font-family: var(--font-header);
+}

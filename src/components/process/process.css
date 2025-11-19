@@ -1,0 +1,120 @@
+.process-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 56px 16px 72px;
+  box-sizing: border-box;
+  background-color: var(--tropical-blue);
+  background-image: url("../../assets/images/process/process-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.process-sub-header {
+  font-family: var(--font-body);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+  width: 100%;
+  padding-top: 8px;
+}
+
+.process-header {
+  font-family: var(--font-header);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  padding: 8px 10px 80px 10px;
+  width: 100%;
+}
+
+/* ===== Card grid ===== */
+.process-card-container {
+  width: 100%;
+  padding: 0 30px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    minmax(0, 1fr)
+  ); /* 5 per row on wide screens */
+  gap: 18px;
+}
+
+/* Each card wrapper fills its grid cell */
+.process-card-wrapper {
+  width: 100%;
+}
+
+/* Staggered up/down on large screens */
+.process-card-wrapper:nth-child(odd) {
+  margin-top: 70px;
+}
+
+.process-card-wrapper:nth-child(even) {
+  margin-bottom: 70px;
+}
+
+/* ===== <= 1200px: centered 3 + 2 layout using flex-wrap ===== */
+@media (max-width: 1200px) {
+  .process-card-container {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center each wrapped row */
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .process-card-wrapper {
+    flex: 0 1 320px; /* target width for 3-per-row */
+    max-width: 340px;
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* flatten stagger for mid screens */
+  .process-card-wrapper:nth-child(odd),
+  .process-card-wrapper:nth-child(even) {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+/* ===== <= 800px: single column ===== */
+@media (max-width: 800px) {
+  .process-container {
+    padding: 40px 16px 56px;
+  }
+
+  .process-sub-header {
+    font-size: 24px;
+  }
+
+  .process-header {
+    font-size: 38px;
+    padding-bottom: 40px;
+  }
+
+  .process-card-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+
+    display: grid;
+    justify-items: center;
+  }
+
+  .process-card-wrapper {
+    width: 80vw; /* << your request: 80% of viewport width */
+    max-width: 500px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

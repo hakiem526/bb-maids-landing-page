@@ -1,0 +1,110 @@
+.notification-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  z-index: 4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade-in 0.3s ease-in-out forwards;
+}
+
+.inner-notification-container {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  background-color: var(--forest-green);
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* ensure SimpleBar doesn’t push out */
+}
+
+.notification-content {
+  z-index: 5;
+  font-family: "PixelOperatorMono8", "Impact", sans-serif;
+  color: var(--cream-white);
+  padding: 1px;
+  animation: scaleIn 0.25s ease-out forwards;
+  border-radius: 8px;
+  background-color: var(--emerald-green);
+  outline: none;
+  pointer-events: auto;
+  scrollbar-gutter: stable both-edges;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.animated-modal-content-wrapper {
+  z-index: 5;
+  font-family: "PixelOperatorMono8", "Impact", sans-serif;
+  color: var(--cream-white);
+  padding: 1px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+  animation: scaleIn 0.25s ease-out forwards;
+  border-radius: 8px;
+  background-color: var(--emerald-green);
+  border: 2px solid var(--dark-navy); /* Outer border color */
+  outline: none;
+}
+
+#close-button-container {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  background-color: var(
+    --forest-green
+  ); /* Match container so it doesn't look transparent */
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  z-index: 10;
+  width: fit-content; /* Only as wide as the button */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#close-button-container > .close-button {
+  padding: 2px 4px;
+  background-color: var(--deep-warm-red);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-right: auto;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.inner-notification-container .simplebar-scrollbar::before {
+  background-color: rgba(136, 136, 136, 0.3);
+  border-radius: 3px;
+  transition: background-color 3s ease-in-out;
+}
+
+.inner-notification-container .simplebar-scrollbar:hover::before {
+  background-color: rgba(85, 85, 85, 0.8);
+}
+
+.inner-notification-container .simplebar-track.simplebar-vertical {
+  width: 10px;
+}
+
+.inner-notification-container .simplebar-track {
+  background: transparent !important;
+}

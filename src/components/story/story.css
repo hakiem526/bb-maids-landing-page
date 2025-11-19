@@ -1,0 +1,232 @@
+.story-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  background-image: url("../../assets/images/story/story-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 3 columns */
+.story-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 520px;
+  gap: 32px;
+}
+
+/* Columns */
+.story-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LEFT */
+.story-col-left {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 0 100px;
+}
+
+.story-sub-header {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.story-header {
+  font-family: var(--font-header);
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--almost-black);
+  margin: 0;
+}
+
+/* MIDDLE — PERSON IMAGE (NO FRAME) */
+.story-col-middle {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: stretch;
+}
+
+.story-person-img {
+  height: 500px;
+  width: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* RIGHT */
+.story-col-right {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 0 100px;
+}
+
+.story-body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0 0 10px 0;
+}
+
+.story-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.story-pill {
+  font-family: var(--font-body);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    120deg,
+    rgba(76, 168, 212, 1),
+    rgba(252, 163, 175, 1)
+  );
+
+  border: 1px solid rgba(76, 168, 212, 0.25);
+  box-shadow: 0 2px 4px rgba(76, 168, 212, 0.12);
+}
+
+/* ===== <= 1250px: header above text, image on the left ===== */
+@media (max-width: 1250px) {
+  .story-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    /* row 1: header full-width
+         row 2: image (left) + text (right)
+      */
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+    grid-template-areas:
+      "header header"
+      "image text";
+    column-gap: 32px;
+    row-gap: 24px;
+    align-items: center;
+  }
+
+  .story-col-left {
+    grid-area: header;
+    padding: 40px 32px 16px; /* still nice padding on mid screens */
+  }
+
+  .story-col-middle {
+    grid-area: image;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* keep image tight */
+  }
+
+  .story-col-right {
+    grid-area: text;
+    padding: 0 32px 16px; /* padding for body text */
+  }
+}
+
+/* ===== Tablet (still 3-ish columns feel, but font down) ===== */
+@media (max-width: 1024px) {
+  .story-header {
+    font-size: 32px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  /* tighten vertical space overall */
+  .story-container {
+    padding: 28px 20px 40px;
+  }
+
+  .story-inner {
+    display: flex; /* override grid from <=1250px */
+    flex-direction: column; /* stack: header -> image -> text */
+    gap: 4px; /* minimal gap between blocks */
+    align-items: center;
+  }
+
+  .story-col-left,
+  .story-col-middle,
+  .story-col-right {
+    width: 100%;
+    max-width: 520px;
+    padding: 0; /* reset padding and re-apply per-block */
+    flex: 0 0 auto; /* <<< THIS kills the huge blank height */
+  }
+
+  /* Header block: keep side padding, kill bottom padding */
+  .story-col-left {
+    padding: 12px 24px 0;
+  }
+
+  .story-sub-header {
+    margin-bottom: 4px; /* tighter than desktop */
+  }
+
+  .story-header {
+    font-size: 26px;
+    margin-bottom: 2px; /* tiny margin to avoid extra gap */
+  }
+
+  /* Image block: no artificial spacing, sits right after header */
+  .story-col-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .story-person-img {
+    max-width: 75%;
+    padding: 20px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Text block: good padding for readability */
+  .story-col-right {
+    padding: 10px 40px 40px;
+  }
+
+  .story-body {
+    font-size: 14px;
+  }
+}
+
+/* ===== Very small screens ===== */
+@media (max-width: 480px) {
+  .story-person-img {
+    max-width: 210px;
+  }
+
+  .story-header {
+    font-size: 22px;
+  }
+}

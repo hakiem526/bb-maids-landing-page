@@ -1,0 +1,187 @@
+/* ===== Hero container ===== */
+/* Fills viewport height, but accounts for absolute header via padding-top.
+   box-sizing: border-box ensures padding is *inside* the 100vh. */
+.hero-container {
+  position: relative;
+  min-height: 50vh;
+  box-sizing: border-box;
+
+  padding: 120px 80px 40px; /* top accounts for header, sides give breathing room */
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 32px;
+}
+
+/* Full-bleed hero background behind content */
+.hero-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background-image: url("../../assets/images/hero/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* ===== Left column ===== */
+.hero-left {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 24px 8px;
+}
+
+/* Use header font for main hero title */
+.hero-left-header {
+  font-family: var(--font-body);
+  color: var(--white);
+  font-size: 52px;
+  line-height: 1.07;
+  font-weight: 700;
+  padding: 8px 0;
+  text-align: left;
+  width: 100%;
+}
+
+/* Secondary copy uses body font */
+.hero-left-secondary {
+  font-family: var(--font-body);
+  color: var(--white);
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 600;
+  padding: 8px 0;
+  text-align: left;
+  max-width: 520px;
+}
+
+/* CTA button */
+.hero-contact-us-btn {
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--font-body);
+
+  border: none;
+  border-radius: 999px;
+  padding: 10px 32px;
+  margin-top: 16px;
+
+  background-color: var(--sky-blue);
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+
+  transition: background-color 0.15s ease, transform 0.08s ease,
+    box-shadow 0.15s ease;
+}
+
+.hero-contact-us-btn:hover {
+  background-color: #5ab8e4;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.hero-contact-us-btn:active {
+  transform: translateY(1px);
+  background-color: #4ca8d4;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Right column ===== */
+.hero-right {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 8px;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+}
+
+/* ===== Responsiveness ===== */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 110px 20px 32px;
+    gap: 24px;
+  }
+
+  .hero-left-header {
+    font-size: 40px;
+  }
+
+  .hero-left-secondary {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .hero-container {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-container {
+    flex-direction: column; /* image first, then text, or swap if preferred */
+    align-items: stretch;
+    padding: 110px 16px 28px;
+  }
+
+  .hero-right {
+    padding: 8px 0 16px;
+  }
+
+  .hero-left {
+    padding: 8px 0;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .hero-left-header {
+    padding-top: 50px;
+    font-size: 46px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .hero-left-secondary {
+    font-size: 20px;
+    padding: 0 10px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-contact-us-btn {
+    font-size: 24px;
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 530px) {
+  .hero-left-header {
+    padding-top: 50px;
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .hero-left-secondary {
+    font-size: 20px;
+    padding: 0 2px;
+    max-width: 100%;
+    text-align: center;
+  }
+}

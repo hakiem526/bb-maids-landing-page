@@ -1,0 +1,169 @@
+/* ===== Header ===== */
+.header {
+  min-height: 56px;
+  width: 85%;
+  max-width: 1500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 50px;
+
+  background: var(--white);
+  box-sizing: border-box;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header-icon {
+  height: 80px;
+  width: 80px;
+}
+
+/* Desktop nav */
+.header-nav {
+  display: flex;
+  gap: 25px;
+}
+
+/* Jump buttons (desktop) */
+.jump-btn {
+  appearance: none;
+  color: var(--almost-black);
+  padding: 10px;
+  background-color: transparent;
+  font-size: 16px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.jump-btn:active {
+  transform: translateY(1px);
+}
+
+.contact-btn {
+  background-color: var(--sky-blue);
+  border-radius: 999px;
+  padding: 10px 40px;
+  color: var(--white);
+  font-size: 18px;
+}
+
+.contact-btn:active {
+  background-color: skyblue;
+}
+
+.contact-btn:hover {
+  background-color: #5ab8e4;
+}
+
+/* Burger (hidden on desktop by default) */
+.burger-btn {
+  display: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.burger-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Mobile dropdown menu */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  margin-top: 10px;
+  padding: 8px 16px 16px 16px;
+
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-nav-item {
+  width: 100%;
+  text-align: left;
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 8px;
+  background: transparent;
+  color: var(--almost-black);
+  font-size: 14px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.08s ease;
+}
+
+.mobile-nav-item:active {
+  transform: translateY(1px);
+  background-color: #f9fbfc;
+}
+
+.mobile-contact-btn {
+  color: var(--sky-blue);
+}
+
+/* ===== Responsive behavior ===== */
+
+/* Tablet & below: header gets a bit wider but still pill */
+@media (max-width: 1085px) {
+  .header {
+    width: 90%;
+  }
+
+  .header-nav {
+    gap: 16px;
+  }
+}
+
+/* Mobile: full-width header, burger menu, hidden desktop nav */
+@media (max-width: 980px) {
+  .header {
+    width: 95%;
+    max-width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 20px;
+  }
+
+  .header-icon {
+    height: 65px;
+    width: 65px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .burger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
