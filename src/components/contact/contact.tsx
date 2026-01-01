@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import "./contact.css";
 import { FormEvent, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 interface ContactProps {
   id?: string;
@@ -336,37 +337,40 @@ export function Contact({ id = "contact-us" }: ContactProps) {
       </div>
 
       {/* Toast */}
-      <AnimatePresence>
-        {toastOpen && (status === "success" || status === "error") && (
-          <motion.div
-            className={`contact-toast contact-toast--${toastVariant}`}
-            initial={{ opacity: 0, y: 16, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 10, scale: 0.98 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
-            role="status"
-            aria-live="polite"
-          >
-            <div className="contact-toast-icon" aria-hidden="true">
-              {toastVariant === "success" ? "✓" : "!"}
-            </div>
-
-            <div className="contact-toast-content">
-              <div className="contact-toast-title">{toastTitle}</div>
-              <div className="contact-toast-body">{toastBody}</div>
-            </div>
-
-            <button
-              type="button"
-              className="contact-toast-close"
-              onClick={closeToast}
-              aria-label="Close"
+      {createPortal(
+        <AnimatePresence>
+          {toastOpen && (status === "success" || status === "error") && (
+            <motion.div
+              className={`contact-toast contact-toast--${toastVariant}`}
+              initial={{ opacity: 0, y: 16, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.98 }}
+              transition={{ duration: 0.18, ease: "easeOut" }}
+              role="status"
+              aria-live="polite"
             >
-              ×
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <div className="contact-toast-icon" aria-hidden="true">
+                {toastVariant === "success" ? "✓" : "!"}
+              </div>
+
+              <div className="contact-toast-content">
+                <div className="contact-toast-title">{toastTitle}</div>
+                <div className="contact-toast-body">{toastBody}</div>
+              </div>
+
+              <button
+                type="button"
+                className="contact-toast-close"
+                onClick={closeToast}
+                aria-label="Close"
+              >
+                ×
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   );
 }

@@ -59,7 +59,7 @@
 /* ===== Floating WhatsApp button ===== */
 .whatsapp-float {
   position: fixed;
-  left: 24px;
+  right: 24px;
   bottom: 24px;
   width: 60px;
   height: 60px;
