@@ -1,13 +1,13 @@
 import "./story.css";
 import { motion } from "framer-motion";
 import FastImage from "../fast-image/fast-image";
-import StoryPerson from "../../assets/images/story/mariam-no-bg-1.png";
+import StoryPerson from "../../assets/images/story/mariam-no-bg-2.png";
 
 export function Story() {
   return (
     <section className="story-container" id="story">
       <div className="story-inner">
-        {/* LEFT: Heading + subheading */}
+        {/* HEADER (full width) */}
         <motion.div
           className="story-col story-col-left"
           initial={{ x: -30, opacity: 0 }}
@@ -21,7 +21,7 @@ export function Story() {
           </h2>
         </motion.div>
 
-        {/* MIDDLE: Person (NO FRAME) */}
+        {/* IMAGE (left col) */}
         <motion.div
           className="story-col story-col-middle"
           initial={{ opacity: 0, y: 30 }}
@@ -36,7 +36,7 @@ export function Story() {
           />
         </motion.div>
 
-        {/* RIGHT: Body + pills */}
+        {/* TEXT (right col) */}
         <motion.div
           className="story-col story-col-right"
           initial={{ x: 30, opacity: 0 }}
@@ -45,26 +45,33 @@ export function Story() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
         >
           <p className="story-body">
-            We know the struggle. BB Maids was founded after watching too many
-            families feel lost and stressed trying to find the perfect
-            helper—and seeing great helpers placed without the proper support.
+            BB Maids was founded after seeing too many families feel overwhelmed
+            while searching for the right helper — and too many good helpers
+            placed without the guidance and support they deserved.
           </p>
 
           <p className="story-body">
-            That's why we've <strong>redefined the agency experience</strong>.
+            The process often felt rushed and transactional, leaving families
+            uncertain and helpers to adapt on their own.
+          </p>
+
+          <p className="story-body">
+            That’s why we chose to{" "}
+            <strong>redefine the agency experience</strong>.
           </p>
 
           <p className="story-body">
             Founded by <strong>Mariam Bibi</strong>, a professional known for
             her dedication to <strong>service</strong> and{" "}
-            <strong>after-care</strong>, we prioritize <strong>training</strong>
-            , <strong>preparation</strong>, and <strong>ongoing support</strong>. We work closely with training
+            <strong>after-care</strong>, BB Maids is a family-run agency built
+            around <strong>training</strong>, <strong>preparation</strong>, and{" "}
+            <strong>ongoing support</strong>. We work closely with training
             partners, personally brief every helper before arrival, and stay
             involved long after placement.
           </p>
 
           <p className="story-body">
-            Our promise is simple: A <strong>high-quality helper</strong> for
+            Our promise is simple: a <strong>high-quality helper</strong> for
             your home, and true <strong>peace of mind</strong> for your family.
           </p>
 
