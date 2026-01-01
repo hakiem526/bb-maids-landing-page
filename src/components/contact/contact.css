@@ -96,6 +96,7 @@
   padding: 22px 24px 24px;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
   box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -194,14 +195,6 @@
   color: #6b7280;
 }
 
-/* Error */
-.contact-error {
-  margin-top: 2px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: #b91c1c;
-}
-
 /* Submit button */
 .contact-submit-btn {
   margin-top: 4px;
@@ -228,6 +221,110 @@
 .contact-submit-btn:active {
   transform: translateY(1px);
   box-shadow: 0 6px 12px rgba(76, 168, 212, 0.24);
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+/* ===== Toast ===== */
+.contact-toast {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+
+  width: min(420px, calc(100vw - 36px));
+  border-radius: 16px;
+  padding: 12px 12px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 42px 1fr 32px;
+  align-items: start;
+  gap: 10px;
+
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+}
+
+.contact-toast-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.contact-toast--success .contact-toast-icon {
+  background: linear-gradient(
+    135deg,
+    rgba(76, 168, 212, 1),
+    rgba(252, 163, 175, 1)
+  );
+}
+
+.contact-toast--error .contact-toast-icon {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+}
+
+.contact-toast-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+}
+
+.contact-toast-title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: 0.02em;
+}
+
+.contact-toast-body {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.contact-toast-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  color: #111827;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+  align-self: start;
+
+  transition: transform 0.08s ease, background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.contact-toast-close:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+}
+
+.contact-toast-close:active {
+  transform: translateY(1px);
 }
 
 /* ===== Tablet ===== */
@@ -259,17 +356,19 @@
     gap: 32px;
   }
 
-  .contact-left,
-  .contact-right {
-    width: 100%;
-  }
-
   .contact-header {
     font-size: 28px;
   }
 
   .contact-field-row-two {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-toast {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
   }
 }
 
@@ -282,59 +381,4 @@
   .contact-form {
     padding: 18px 16px 20px;
   }
-}
-
-/* Wrap so success state uses same card styling */
-.contact-card {
-  width: 100%;
-}
-
-/* Success state */
-.contact-success {
-  width: 100%;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 28px 24px 26px;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.contact-success-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 22px;
-  color: #ffffff;
-  background: linear-gradient(
-    135deg,
-    rgba(76, 168, 212, 1),
-    rgba(252, 163, 175, 1)
-  );
-}
-
-.contact-success-title {
-  margin: 4px 0 0;
-  font-family: var(--font-header);
-  font-size: 22px;
-  line-height: 1.2;
-  color: var(--almost-black);
-}
-
-.contact-success-body {
-  margin: 0 0 6px 0;
-  font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.7;
-  color: #374151;
 }
