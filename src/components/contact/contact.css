@@ -283,3 +283,58 @@
     padding: 18px 16px 20px;
   }
 }
+
+/* Wrap so success state uses same card styling */
+.contact-card {
+  width: 100%;
+}
+
+/* Success state */
+.contact-success {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px 24px 26px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.contact-success-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 22px;
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(76, 168, 212, 1),
+    rgba(252, 163, 175, 1)
+  );
+}
+
+.contact-success-title {
+  margin: 4px 0 0;
+  font-family: var(--font-header);
+  font-size: 22px;
+  line-height: 1.2;
+  color: var(--almost-black);
+}
+
+.contact-success-body {
+  margin: 0 0 6px 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: #374151;
+}
