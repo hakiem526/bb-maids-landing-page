@@ -6,16 +6,18 @@ interface ContactProps {
   id?: string;
 }
 
-const TARGET_EMAIL = "hakiemm@hotmail.com"; // "mariambb.y"
+const TARGET_EMAIL = "mariambb_y@yahoo.com.sg";
 
 export function Contact({ id = "contact-us" }: ContactProps) {
   const [contactError, setContactError] = useState<string | null>(null);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     const form = e.currentTarget;
+
     const phone = (
       form.elements.namedItem("contactNumber") as HTMLInputElement
     )?.value.trim();
+
     const email = (
       form.elements.namedItem("email") as HTMLInputElement
     )?.value.trim();
@@ -52,7 +54,7 @@ export function Contact({ id = "contact-us" }: ContactProps) {
           <div className="contact-highlight-box">
             <p className="contact-highlight-title">What happens next?</p>
             <ul className="contact-highlight-list">
-              <li>We review your needs within 1–2 working days</li>
+              <li>We review your needs within 3 working days</li>
               <li>No obligation — just an honest recommendation</li>
             </ul>
           </div>
@@ -75,8 +77,8 @@ export function Contact({ id = "contact-us" }: ContactProps) {
             {/* FormSubmit config */}
             <input type="hidden" name="_subject" value="New BB Maids enquiry" />
             <input type="hidden" name="_template" value="table" />
-            {/* CAPTCHA ON by default */}
 
+            {/* Basic */}
             <div className="contact-field-row">
               <div className="contact-field">
                 <label htmlFor="name" className="contact-label">
@@ -124,6 +126,104 @@ export function Contact({ id = "contact-us" }: ContactProps) {
               required.
             </p>
 
+            {/* Household details (makes the form feel structured, not random) */}
+            <div className="contact-section-title">Household details</div>
+
+            <div className="contact-field-row contact-field-row-two">
+              <div className="contact-field">
+                <label htmlFor="numAdults" className="contact-label">
+                  No. of Adults<span className="contact-required">*</span>
+                </label>
+                <input
+                  id="numAdults"
+                  name="numAdults"
+                  type="number"
+                  min={0}
+                  max={20}
+                  className="contact-input"
+                  required
+                />
+              </div>
+
+              <div className="contact-field">
+                <label htmlFor="numChildren" className="contact-label">
+                  No. of Children<span className="contact-required">*</span>
+                </label>
+                <input
+                  id="numChildren"
+                  name="numChildren"
+                  type="number"
+                  min={0}
+                  max={20}
+                  className="contact-input"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="contact-field-row contact-field-row-two">
+              <div className="contact-field">
+                <label htmlFor="homeType" className="contact-label">
+                  Home Type<span className="contact-required">*</span>
+                </label>
+                <select
+                  id="homeType"
+                  name="homeType"
+                  className="contact-select"
+                  required
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Select home type
+                  </option>
+                  <option value="hdb">HDB</option>
+                  <option value="condo">Condo</option>
+                  <option value="landed">Landed</option>
+                  <option value="others">Others</option>
+                </select>
+              </div>
+
+              <div className="contact-field">
+                <label htmlFor="bedrooms" className="contact-label">
+                  No. of Bedrooms<span className="contact-required">*</span>
+                </label>
+                <input
+                  id="bedrooms"
+                  name="bedrooms"
+                  type="number"
+                  min={0}
+                  max={12}
+                  className="contact-input"
+                  required
+                />
+              </div>
+            </div>
+
+            {/* Preferences */}
+            <div className="contact-section-title">Preferences</div>
+
+            <div className="contact-field">
+              <label htmlFor="maidAgeRange" className="contact-label">
+                Preferred Helper Age Range
+                <span className="contact-required">*</span>
+              </label>
+              <select
+                id="maidAgeRange"
+                name="maidAgeRange"
+                className="contact-select"
+                required
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Select age range
+                </option>
+                <option value="20-30">20–30</option>
+                <option value="30-40">30–40</option>
+                <option value="gt-40">&gt; 40</option>
+              </select>
+            </div>
+
+            {/* Jobscope */}
             <div className="contact-field">
               <label htmlFor="jobscope" className="contact-label">
                 Jobscope<span className="contact-required">*</span>
@@ -147,6 +247,7 @@ export function Contact({ id = "contact-us" }: ContactProps) {
               </select>
             </div>
 
+            {/* Message */}
             <div className="contact-field">
               <label htmlFor="message" className="contact-label">
                 Message<span className="contact-required">*</span>
@@ -156,7 +257,7 @@ export function Contact({ id = "contact-us" }: ContactProps) {
                 name="message"
                 className="contact-textarea"
                 rows={4}
-                placeholder="Tell us about your family, routines, and what you’re looking for in a helper."
+                placeholder="Any other specifications about your family, routines, and what you’re looking for in a helper."
                 required
               />
             </div>

@@ -101,6 +101,18 @@
   gap: 14px;
 }
 
+/* Section headings inside the form */
+.contact-section-title {
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+/* Layout rows */
 .contact-field-row {
   display: flex;
   flex-direction: column;
@@ -108,8 +120,9 @@
 }
 
 .contact-field-row-two {
-  flex-direction: row;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
 }
 
 .contact-field {
@@ -220,7 +233,7 @@
 /* ===== Tablet ===== */
 @media (max-width: 1024px) {
   .contact-inner {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 28px;
     padding: 4%;
   }
@@ -258,7 +271,6 @@
   .contact-field-row-two {
     flex-direction: column;
   }
-
 }
 
 /* ===== Very small screens ===== */
