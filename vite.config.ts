@@ -9,5 +9,5 @@ export default defineConfig({
   build: {
     outDir: './docs'
   },
-  base: '/bb-maids-landing-page',
+  base: '/',
 });
