@@ -18,7 +18,7 @@ const SERVICE_CARDS = [
     id: "training",
     mainIcon: TrainingIcon,
     title: "Training & Certification",
-    body: "Every helper completes structured training in Jakarta, covering essential skills such as cleaning, cooking, safety practices, and communication to prepare them for your home.",
+    body: "Every helper completes structured training at a training centre in Indonesia, covering essential skills such as cleaning, cooking, safety practices, and communication to prepare them for your home.",
   },
   {
     id: "support",
